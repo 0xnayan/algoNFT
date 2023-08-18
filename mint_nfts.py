@@ -32,7 +32,6 @@ def mintNFTs(requestMint: NFTs, *, output: abi.Uint64) -> Expr:
     metadata_hash = abi.make(abi.StaticArray[abi.Byte, Literal[32]])
 
     return Seq(
-        # Get properties from requestMint and mint NFT
         requestMint.name.store_into(name),
         requestMint.unitName.store_into(unitName),
         requestMint.reserve.store_into(reserve),
@@ -50,7 +49,6 @@ def mintNFTs(requestMint: NFTs, *, output: abi.Uint64) -> Expr:
                 TxnField.fee: Int(0),
             }
         ),
-        # Return created asset
         output.set(InnerTxn.created_asset_id()),
         app.state.asa.set(InnerTxn.created_asset_id())
     )
@@ -97,5 +95,3 @@ if __name__ == "__main__":
     app.build().export(
         Path(__file__).resolve().parent / f"./artifacts/{app.name}"
     )
-
-#https://ipfs.io/ipfs/QmWtH4CKoa4FdTePVtFJtBwjz542CwQgrsTMrGNpF9hKLJ/,QmTM3YoXb7yQ5dWG1KhFLC9vn9A94zgJSUx5jKDhiMidr8,algonfts,alNFT,5ODPUBNMJJKSCJT75HPD4E236DULKW7PVHYDUFGCCNJ63IVYQOCINRNWB4
