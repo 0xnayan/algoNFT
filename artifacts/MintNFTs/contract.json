@@ -1,0 +1,46 @@
+{
+    "name": "MintNFTs",
+    "methods": [
+        {
+            "name": "mintNFTs",
+            "args": [
+                {
+                    "type": "(string,byte[46],string,string,address)",
+                    "name": "requestMint"
+                }
+            ],
+            "returns": {
+                "type": "uint64"
+            }
+        },
+        {
+            "name": "transferNFTs",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "assetId"
+                },
+                {
+                    "type": "address",
+                    "name": "receiver"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "burn",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "Id"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        }
+    ],
+    "networks": {}
+}
