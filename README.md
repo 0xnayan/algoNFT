@@ -28,6 +28,7 @@
 
   <p align="center">
    This project aims to design and develop a secure and fully-functional Non-Fungible Token (NFT) contract using Pyteal, adhering to the ERC-721 standard. The contract allows users to create, transfer, and burn NFTs while ensuring the integrity of ownership and preventing fraudulent activities.
+Deployed to testnet at : https://app.dappflow.org/explorer/transaction/S5WMTENJDTSDYQV36L2JRJ5FCAPNVAGNMLMEP5SAPHCLVQ2CXZXQ
   </p>
 </div>
 
