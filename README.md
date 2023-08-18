@@ -4,11 +4,10 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-   <li><a href="#view-website">View website</a></li>
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#features">Features</a></li>
       </ul>
     </li>
     <li>
@@ -24,31 +23,22 @@
   </ol>
 </details>
 
-## View website
-  - https://cold-band-0660.on.fleek.co/
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
   <p align="center">
-   Welcome to my NFT minting website! This platform allows you to mint your own non-fungible tokens on the Ethereum blockchain(currently Goerli is working).
+   This project aims to design and develop a secure and fully-functional Non-Fungible Token (NFT) contract using Pyteal, adhering to the ERC-721 standard. The contract allows users to create, transfer, and burn NFTs while ensuring the integrity of ownership and preventing fraudulent activities.
   </p>
 </div>
 
-With the user-friendly interface, you can easily pay the required fee to mint the NFT. Once the transaction is confirmed on the blockchain, your NFT is ready to be viewed and traded on NFT marketplaces(opensea).
-
-Though currently this website is running on goerli testnet. I am working to deploy it in eth mainnet or polygon networks that will give you flexibility in choosing which network to use for your NFTs.
-
-### Built With
-Using tools:
-
-- Solidity
-- ReactJs
-- Hardhat
-- Metamask
-- EthersJs
-- Alchamy
-- Tailwind CSS
+### Features
+- Unique Identifier: Each NFT is assigned a unique identifier for easy tracking and authentication.
+- Name and Description: NFTs have associated names and descriptions to provide meaningful context.
+- URI Support: Utilizes Uniform Resource Identifiers (URIs) to conveniently access metadata associated with each NFT.
+- Pricing: NFTs are priced, providing a clear value for each token.
+- Minting: Users can create new NFTs through the contract.
+- Transfer: NFTs can be seamlessly transferred from one user to another.
+- Burning: Allows users to destroy NFTs when needed.
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -56,9 +46,11 @@ Using tools:
 ### Prerequisites
 
 Before you can start using the NFT minting project, you need to have the following tools installed in your computer:
-- Node.js
-- Hardhat framework
-
+- AlgoKit
+- python3.10
+- pipx
+- git
+- docker
 
 ### Installation
 
@@ -69,32 +61,23 @@ Required steps for installing the project:
    git clone https://github.com/your_username_/Project-Name.git
    ```
 2. Open a terminal and navigate to the project directory.
-3. Install the project dependencies
+3. Run the contract
    ```sh
-   npm install
+   python3 mint_nfts.py
    ```
+   it will generate the teal and the json files.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-### For localhost:
-1. 1st run the hardhat node like:
+### For deployment on testnet:
+1. open app.dappflow.org, connect a wallet and change the network to testnet:
+2. go to abi studio then upload the json and teal files then create app 
+3. Now you are ready to go for mint in the test network by providing some details like below
  ```sh
-   npx hardhat node
+   nftURI,metadata,NFTname,unitName,ReserveAddress(whereToStore)
    ```
-2. Then to deploy the contracts in localhost run
- ```sh
-   npx hardhat run --network localhost scripts/deploy.js
-   ```
-3. Now you are ready to go for mint in the localhost network
-
-### For goerli testnet:
-1. 1st you have to store the private key in the .env file (make sure you have sufficient test eth for the gas fees).
-2. Now deploy the contract to the goerli testnet like:
- ```sh
-   npx hardhat run --network goerli scripts/deploy.js
-   ```
-3. Now you can go for mint the nfts by paying minting fee.
+4. after that will will be able to transfer and burn the nft
 
 <!-- CONTRIBUTING -->
 ## Contributing
