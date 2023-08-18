@@ -6,7 +6,7 @@ from pyteal import *
 
 class NFTs(abi.NamedTuple):
     url: abi.Field[abi.String]
-    metadata_hash: abi.Field[abi.StaticArray[abi.Byte, Literal[46]]]
+    metadata_hash: abi.Field[abi.StaticArray[abi.Byte, Literal[32]]]
     name: abi.Field[abi.String]
     unitName: abi.Field[abi.String]
     reserve: abi.Field[abi.Address]
@@ -29,7 +29,7 @@ def mintNFTs(requestMint: NFTs, *, output: abi.Uint64) -> Expr:
     unitName = abi.String()
     reserve = abi.Address()
     url = abi.String()
-    metadata_hash = abi.make(abi.StaticArray[abi.Byte, Literal[46]])
+    metadata_hash = abi.make(abi.StaticArray[abi.Byte, Literal[32]])
 
     return Seq(
         # Get properties from requestMint and mint NFT

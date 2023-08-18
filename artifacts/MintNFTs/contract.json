@@ -5,7 +5,7 @@
             "name": "mintNFTs",
             "args": [
                 {
-                    "type": "(string,byte[46],string,string,address)",
+                    "type": "(string,byte[32],string,string,address)",
                     "name": "requestMint"
                 }
             ],
